@@ -31,43 +31,50 @@ console.log(response.data);
 .movie-detail {
   padding: 20px;
   color: white;
-  background-color: #141414; /* Dark background for the detail view */
+  background-color: #141414; /* Netflix dark gray for the detail view background */
 }
 
 .movie-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #e50914; /* Netflix red */
+  color: #e50914; /* Netflix red for the movie title */
+  font-weight: bold; /* Emphasize the title */
 }
 
 .movie-overview {
   font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #d3d3d3; /* Light gray for descriptive text */
 }
 
 .movie-release-date {
   font-size: 1rem;
   margin-bottom: 20px;
+  color: #d3d3d3; /* Light gray for the release date */
 }
 
 .movie-site {
   display: inline-block;
   margin-bottom: 20px;
   padding: 10px 15px;
-  background-color: #e50914; /* Netflix red */
-  color: white;
+  background-color: #e50914; /* Netflix red for buttons */
+  color: white; /* White text for readability */
   text-decoration: none;
   border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .movie-site:hover {
-  background-color: #f01212; /* Darker red on hover */
+  background-color: #f40612; /* Slightly brighter red on hover */
+  transform: scale(1.05); /* Subtle scaling on hover */
 }
 
 .movie-poster {
   width: 25%;
   border-radius: 10px;
   margin-bottom: 20px;
+  border: 3px solid #333; /* Subtle border for the poster */
 }
 
 .trailers-title {
@@ -75,6 +82,8 @@ console.log(response.data);
   margin-top: 40px;
   margin-bottom: 20px;
   text-align: center;
+  color: white; /* White text for the trailer title */
+  font-weight: bold;
 }
 
 .trailers-container {
@@ -85,19 +94,22 @@ console.log(response.data);
 }
 
 .trailer-tile {
-  background-color: #222;
+  background-color: #222; /* Darker gray for the tiles */
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.3s;
   width: 200px; /* Fixed width for trailer tiles */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
 .trailer-tile:hover {
   transform: scale(1.05); /* Scale effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 }
 
 .trailer-thumbnail {
   width: 100%; /* Full width of the tile */
   height: auto; /* Maintain aspect ratio */
+  border-bottom: 2px solid #e50914; /* Netflix red highlight */
 }
 </style>

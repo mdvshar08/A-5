@@ -1,27 +1,4 @@
-<template>
-    <div class="movie-gallery">
-      <label for="genre-select" class="genre-label">Select Genre</label>
-      <select id="genre-select" v-model="selectedGenre" @change="getMovieByGenre">
-        <option v-for="genre in genres" :key="genre.id" :value="genre.id">{{ genre.name }}</option>
-      </select>
-  
-      <!-- Show loading state -->
-      <div v-if="loading" class="loading">Loading...</div>
-  
-      <!-- Show error message -->
-      <div v-if="error" class="error">{{ error }}</div>
-  
-      <!-- Movie list -->
-      <div v-if="response" class="movie-list">
-        <div v-for="movie in response.data.results" :key="movie.id" class="movie-card" @click="getMovieDetails(movie.id)">
-          <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="Movie Poster" class="movie-poster" />
-          <p class="movie-title">{{ movie.title }}</p>
-        </div>
-      </div>
-    </div>
-  </template>
-  
-  <script setup>
+<script setup>
   import axios from "axios";
   import { ref, onMounted } from "vue";
   import { useRouter } from "vue-router";
@@ -61,6 +38,29 @@
     getMovieByGenre();
   });
   </script>
+
+<template>
+  <div class="movie-gallery">
+    <label for="genre-select" class="genre-label">Select Genre</label>
+    <select id="genre-select" v-model="selectedGenre" @change="getMovieByGenre">
+      <option v-for="genre in genres" :key="genre.id" :value="genre.id">{{ genre.name }}</option>
+    </select>
+
+    <!-- Show loading state -->
+    <div v-if="loading" class="loading">Loading...</div>
+
+    <!-- Show error message -->
+    <div v-if="error" class="error">{{ error }}</div>
+
+    <!-- Movie list -->
+    <div v-if="response" class="movie-list">
+      <div v-for="movie in response.data.results" :key="movie.id" class="movie-card" @click="getMovieDetails(movie.id)">
+        <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="Movie Poster" class="movie-poster" />
+        <p class="movie-title">{{ movie.title }}</p>
+      </div>
+    </div>
+  </div>
+</template>
   
   <style scoped>
   .movie-gallery {

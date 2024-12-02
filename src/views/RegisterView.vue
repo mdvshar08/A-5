@@ -1,119 +1,118 @@
-<script setup></script>
+<script setup>
+
+</script>
 
 <template>
-  <div class="hero">
-    <div class="overlay">
-      <div class="navbar">
-        <h1>MyFlix</h1>
-        <a href="index.html" class="button login">Login</a>
-      </div>
-      <div class="form-container">
-        <h2>Create an Account</h2>
-        <form>
-          <input type="text" placeholder="Name" class="input-field" required>
-          <input type="email" placeholder="Email" class="input-field" required>
-          <input type="password" placeholder="Password" class="input-field" required>
-          <button type="submit" class="button register">Register</button>
+    <h1 class="hero">BingeBox</h1>
+    <RouterLink to="/Login" class="button register">Login</RouterLink>
+    <RouterLink to="/" class="button home">Back to Home</RouterLink>
+
+    <div class="form-container">
+        <h2>Register Account</h2>
+        <form @submit.prevent="handleLogin">
+            <input type="text" placeholder="First Name" class="input-field" required>
+            <input type="text" placeholder="Last Name" class="input-field" required>
+            <input type="email" placeholder="Email" class="input-field" required />
+            <input v-model="password" type="password" placeholder="Password" class="input-field" required />
+            <input v-model="reEnterPassword" type="password" placeholder="Re-enter Password" class="input-field"
+                required />
+            <button type="submit" class="button login">Login</button>
         </form>
-      </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
+body {
+    background-color: #141414; /* Dark gray for the background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px 0 70px;
+    color: #ffffff; /* White text for readability */
+}
+
 .hero {
-  background-image: url('https://source.unsplash.com/random/1920x1080/?movie'); /* Replace with your desired background */
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+    background-color: #141414; /* Match the body background */
+    color: #ffffff; /* White text for contrast */
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 20px;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 20px; /* Added padding for better spacing */
+.hero h1 {
+    font-size: 60px;
+    color: #e50914; /* Netflix red for heading */
+    margin-bottom: 10px;
+    font-weight: bold; /* Bold for emphasis */
 }
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.navbar h1 {
-  font-size: 2rem;
-}
-
-.navbar .login {
-  background-color: #e50914;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.navbar .login:hover {
-  background-color: #f40612;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #d3d3d3; /* Light gray for descriptive text */
 }
 
 .form-container {
-  text-align: center;
-  margin-top: 50px; /* Adjusts spacing from the top */
+    background-color: #222222; /* Darker gray for the form container */
+    border-radius: 10px;
+    padding: 40px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .form-container h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+    color: #e50914; /* Netflix red for form headings */
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .input-field {
-  padding: 15px; /* Increased padding for better touch targets */
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc; /* Added a border */
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #333333; /* Subtle dark gray border */
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff; /* White text for input fields */
+    background-color: #141414; /* Dark gray background for input fields */
 }
 
 .input-field:focus {
-  border-color: #e50914; /* Change border color on focus */
-  outline: none; /* Remove default outline */
+    border-color: #e50914; /* Netflix red for focus effect */
+    outline: none;
 }
 
-.register {
-  background-color: #e50914;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s; /* Added transform for hover effect */
+.button {
+    background-color: #e50914; /* Netflix red for buttons */
+    color: #ffffff; /* White text for contrast */
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    font-weight: bold;
 }
 
-.register:hover {
-  background-color: #f40612;
-  transform: scale(1.05); /* Slightly scale up on hover */
+.button:hover {
+    background-color: #f40612; /* Brighter red for hover effect */
+    transform: scale(1.05); /* Subtle scaling on hover */
 }
 
-@media (max-width: 600px) {
-  .input-field {
-    width: 90%; /* Make input fields responsive */
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem; /* Reduce font size on smaller screens */
-  }
+footer {
+    background-color: #141414; /* Match the body background */
+    color: #d3d3d3; /* Light gray for footer text */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 2px solid #333333; /* Subtle border for separation */
 }
 </style>
