@@ -9,20 +9,20 @@ const genresList = [
     genreName: "Action"
   },
   {
-    id: 12,
-    genreName: "Adventure"
+    id: 878,
+    genreName: "Sci-Fi"
   },
   {
     id: 27,
     genreName: "Horror"
   },
   {
-    id: 10751,
-    genreName: "Family"
+    id: 35,
+    genreName: "Comedy"
   },
   {
-    id: 36,
-    genreName: "History"
+    id: 10749,
+    genreName: "Romance"
   },
 ]
 </script>

@@ -13,8 +13,8 @@
 
 <style scoped>
 .hero {
-    background-color: #141414; /* Dark gray background similar to Netflix */
-    color: #ffffff; /* White text for readability */
+    background-color: #141414;
+    color: #ffffff; 
     text-align: center;
     padding: 60px 20px;
     margin-bottom: 20px;
@@ -23,14 +23,14 @@
 
 .hero h1 {
     font-size: 60px;
-    color: #e50914; /* Netflix red for the heading */
+    color: #e50914;
     margin-bottom: 10px;
-    font-weight: bold; /* Bold to emphasize the title */
+    font-weight: bold; 
 }
 
 .hero p {
     font-size: 20px;
-    color: #ffffff; /* White text for paragraphs */
+    color: #ffffff;
     margin-bottom: 20px;
 }
 </style>

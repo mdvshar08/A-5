@@ -44,12 +44,12 @@ onMounted(async () => {
 
 .movie-list {
   display: flex;
-  gap: 20px; /* Space between movie cards */
+  gap: 20px;
 }
 
 .movie-card {
-  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
-  width: 200px; /* Adjust the width as needed */
+  flex: 0 0 auto; 
+  width: 200px; 
   text-align: center;
 }
 

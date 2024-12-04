@@ -17,20 +17,20 @@ import Hero from '../components/hero.vue'
 <style scoped>
 .movie-gallery {
   display: flex;
-  justify-content: center;  /* Centers the gallery horizontally */
+  justify-content: center;  
   overflow-x: auto;
   padding: 20px;
 }
 
 .movie-list {
   display: flex;
-  gap: 40px; /* Increased space between movie cards */
-  justify-content: center; /* Center the movie cards within the list */
+  gap: 40px; 
+  justify-content: center; 
 }
 
 .movie-card {
   flex: 0 0 auto;
-  width: 200px; /* Adjust the width as needed */
+  width: 200px; 
   text-align: center;
 }
 
@@ -42,7 +42,7 @@ import Hero from '../components/hero.vue'
 
 .movie-title {
   margin-top: 10px;
-  font-size: 16px;  /* Adjusted font size */
+  font-size: 16px; 
   font-weight: bold;
 }
 

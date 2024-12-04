@@ -4,19 +4,20 @@
 
 <template>
   <div class="header-buttons">
-    <RouterLink to="/register" class="button register">Register</RouterLink>
-    <RouterLink to="/login" class="button login">Login</RouterLink>
     <h1>BingeBox</h1>
+    <div class="buttons">
+      <RouterLink to="/register" class="button register">Register</RouterLink>
+      <RouterLink to="/login" class="button login">Login</RouterLink>
+    </div>
   </div>
 </template>
 
 <style scoped>
 h1 {
-  margin-left: auto;
-  padding: 1%;
-  color: #e50914; /* Netflix's signature red color */
+  color: #e50914;
   font-family: 'Arial', sans-serif;
   font-weight: bold;
+  font-size: 2rem;
 }
 
 .header-buttons {
@@ -24,25 +25,25 @@ h1 {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #141414; /* Dark gray background similar to Netflix */
+  background-color: #141414;
   padding: 10px 20px;
-  border-bottom: 2px solid #333333; /* Subtle border for separation */
+  border-bottom: 2px solid #333333;
 }
 
-.button {
-  margin-right: 10px;
+.buttons {
+  display: flex;
+  gap: 10px; 
 }
 
 .header-buttons .button {
   display: inline-block;
-  background-color: #e50914; /* Netflix red for buttons */
-  color: #ffffff; /* White text for contrast */
+  background-color: #e50914;
+  color: #ffffff;
   padding: 10px 30px;
   font-size: 18px;
   text-align: center;
   text-decoration: none;
   border: none;
-  margin: 5px;
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -50,13 +51,13 @@ h1 {
 }
 
 .header-buttons .button:hover {
-  background-color: #f40612; /* Slightly brighter red on hover */
-  transform: scale(1.05); /* Subtle hover scaling */
+  background-color: #f40612;
+  transform: scale(1.05);
 }
 
 body {
-  background-color: #000000; /* Black background for the entire page */
-  color: #ffffff; /* White text for readability */
+  background-color: #000000;
+  color: #ffffff;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
