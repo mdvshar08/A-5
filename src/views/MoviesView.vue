@@ -21,8 +21,8 @@ const genresList = [
     genreName: "Comedy"
   },
   {
-    id: 10749,
-    genreName: "Romance"
+    id: 53,
+    genreName: "Thriller"
   },
 ]
 </script>

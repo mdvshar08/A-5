@@ -6,7 +6,7 @@ const router = useRouter();
 const password = ref('');
 
 const handleLogin = () => {
-    if (password.value === "123") {
+    if (password.value === "madhav") {
         router.push("/movies");
     } else {
         alert("Invalid Password");
